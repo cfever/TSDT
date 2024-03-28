@@ -26,7 +26,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # 应用有一个输入待办事项的文本输入框
         inputbox = self.browser.find_element(By.ID, 'id_new_item')
-        self.assertEquals(
+        self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
         )
@@ -40,7 +40,7 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
         table = self.browser.find_element(By.ID, 'id_list_table')
-        rows = table.find_element(By.TAG_NAME, 'tr')
+        rows = table.find_elements(By.TAG_NAME, 'tr')
         self.assertIn('1: Buy flowers', [row.text for row in rows])
 
         # 页面中又显示了一个文本输入框，可以输入其他待办事项
