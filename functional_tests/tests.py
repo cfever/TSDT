@@ -109,4 +109,3 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertIn('Buy milk', page_text)
 
         # 两个人都很满意，然后去睡觉了
-        
